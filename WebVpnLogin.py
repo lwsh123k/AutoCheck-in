@@ -114,13 +114,15 @@ class CheckInWithVpn:
         session = self.session
         host = "https://webvpn.xjtu.edu.cn"
         url = "https://ipahw.xjtu.edu.cn/szjy-boot/api/v1/sportActa/signRun"
+        # previous: "longitude": 108.652927,
+        #           "latitude": 34.256757,
         res = session.post(
             host
             + "/https/77726476706e69737468656265737421e0f6498b692862446b468ca88d1b203b/szjy-boot/api/v1/sportActa/signRun?vpn-12-o2-pahw.xjtu.edu.cn",
             json={
                 "sportType": 2,
-                "longitude": 108.652927,
-                "latitude": 34.256757,
+                "longitude": 108.652928,
+                "latitude": 34.256758,
                 "courseInfoId": "1698877075970076673",
             },
         )
@@ -133,10 +135,15 @@ class CheckInWithVpn:
         session = self.session
         host = "https://webvpn.xjtu.edu.cn"
         url = "https://ipahw.xjtu.edu.cn/szjy-boot/api/v1/sportActa/signOutTrain"
+        # previous: "longitude": 108.652927,
+        #           "latitude": 34.256757,
         res = session.post(
             host
             + "/https/77726476706e69737468656265737421e0f6498b692862446b468ca88d1b203b/szjy-boot/api/v1/sportActa/signOutTrain?vpn-12-o2-pahw.xjtu.edu.cn",
-            json={},
+            json={
+                "longitude": 108.652349,
+                "latitude": 34.256757,
+            },
         )
         self.result_data = res.json()
         current_time = datetime.today().strftime("%Y-%m-%d")
